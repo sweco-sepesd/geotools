@@ -158,6 +158,9 @@ public class CssTranslator {
     /** Matches the title tag inside a rule comment */
     static final Pattern TITLE_PATTERN = Pattern.compile("^.*@title\\s*(?:\\:\\s*)?(.+)\\s*$");
 
+    /** Matches the name tag inside a rule comment */
+    static final Pattern NAME_PATTERN = Pattern.compile("^.*@name\\s*(?:\\:\\s*)?(.+)\\s*$");
+
     /** Matches the abstract tag inside a rule comment */
     static final Pattern ABSTRACT_PATTERN =
             Pattern.compile("^.*@abstract\\s*(?:\\:\\s*)?(.+)\\s*$");
@@ -1008,6 +1011,10 @@ public class CssTranslator {
         String title = getCombinedTag(cssRule.getComment(), TITLE_PATTERN, ", ");
         if (title != null) {
             ruleBuilder.title(title);
+        }
+        String name = getCombinedTag(cssRule.getComment(), NAME_PATTERN, ", ");
+        if (name != null) {
+            ruleBuilder.name(name);
         }
         String ruleAbstract = getCombinedTag(cssRule.getComment(), ABSTRACT_PATTERN, "\n");
         if (ruleAbstract != null) {
