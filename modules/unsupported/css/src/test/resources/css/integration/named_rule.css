@@ -1,0 +1,21 @@
+/* @name base */
+* {
+  fill: #000001;
+}
+
+/* @name ten */
+[PROP=10] {
+  stroke: #000001;
+}
+
+/* @name twenty */
+[PROP=20] {
+  stroke: #000002;
+}
+
+
+/* @title title only */
+[PROP=30] {
+  stroke: #000002;
+}
+
